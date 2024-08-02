@@ -1,0 +1,23 @@
+.bg-dark {
+  @include bg-colour($clr-dark);
+}
+
+.bg-accent {
+  @include bg-colour($clr-accent);
+}
+
+.bg-white {
+  @include bg-colour($clr-white);
+}
+
+.text-dark {
+  @include text-colour($clr-dark);
+}
+
+.text-accent {
+  @include text-colour($clr-accent);
+}
+
+.text-white {
+  @include text-colour($clr-white);
+}

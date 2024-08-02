@@ -1,0 +1,7 @@
+@mixin bg-colour($colour) {
+  background-color: hsl($colour);
+}
+
+@mixin text-colour($colour) {
+  color: hsl($colour);
+}

@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.large-button {
+  display: flex;
+  place-items: center; //shorthand for justify content and align items
+  padding: 0 2em;
+  aspect-ratio: 1; //sets the height based on the width 1 = 1/1 = width=1/height=1
+  border-radius: 50%;
+  text-decoration: none;
+}

@@ -1,6 +1,7 @@
 import Dots from './Dots'
 import LargeButton from './LargeButton'
 import NavBar from './NavBar'
+import Numbers from './Numbers'
 import Tabs from './Tabs'
 
 const InteractiveElements = () => (
@@ -12,7 +13,7 @@ const InteractiveElements = () => (
       <NavBar />
     </div>
 
-    <div className="flex ">
+    <div className="flex" style={{ justifyContent: 'space-around' }}>
       <div style={{ marginTop: '5rem' }}>
         <LargeButton />
       </div>
@@ -26,13 +27,9 @@ const InteractiveElements = () => (
           } as React.CSSProperties
         }
       >
-        {/* Tabs */}
         <Tabs />
-
-        {/* Dots */}
         <Dots />
-
-        {/* Numbers */}
+        <Numbers />
       </div>
     </div>
   </section>

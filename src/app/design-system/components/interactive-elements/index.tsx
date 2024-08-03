@@ -1,4 +1,5 @@
-import LargeButton from "./LargeButton"
+import LargeButton from './LargeButton'
+import NavBar from './NavBar'
 
 const InteractiveElements = () => (
   <section className="flow" id="interactive-elements">
@@ -7,10 +8,12 @@ const InteractiveElements = () => (
     </h2>
 
     {/* navigation */}
-    <div></div>
+    <div>
+      <NavBar />
+    </div>
 
-    <div className="flex">
-      <div style={{marginTop: "5rem"}}>
+    <div className="flex ">
+      <div style={{ marginTop: '5rem' }}>
         {/* explore button */}
         <LargeButton />
       </div>

@@ -1,0 +1,19 @@
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+
+.primary-navigation {
+  gap: 8rem;
+  --underline-gap: 2rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+
+    span {
+      margin-right: 0.5em;
+      font-weight: 700;
+    }
+  }
+}

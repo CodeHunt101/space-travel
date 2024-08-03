@@ -1,1 +1,15 @@
-@import './spacings', './colours', './typography'
+@import './spacings', './colours', './typography';
+
+.underline-indicators > * {
+  padding: var(--underline-gap, $default-underline-gap) 0;
+  border-bottom: .2rem solid #{'hsl(#{$clr-white} / 0)'}
+}
+
+.underline-indicators > *:hover, 
+.underline-indicators > *:focus {
+  border-color: #{'hsl(#{$clr-white} / 25%)'}
+}
+
+.underline-indicators > .active {
+  border-color: #{'hsl(#{$clr-white} / 100%)'}
+}

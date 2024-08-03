@@ -8,6 +8,10 @@
   gap: var(--gap, $default-gap)
 }
 
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, $default-flow-space);
+}
+
 .container {
   padding-inline: 2em;
   margin-inline: auto;

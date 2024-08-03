@@ -1,10 +1,31 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .large-button {
+  position: relative;
   display: flex;
-  place-items: center; //shorthand for justify content and align items
+  place-items: center;
   padding: 0 2em;
-  aspect-ratio: 1; //sets the height based on the width 1 = 1/1 = width=1/height=1
+  aspect-ratio: 1;
   border-radius: 50%;
   text-decoration: none;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    @include bg-colour($clr-white, 15%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.7s linear;
+    z-index: -1;
+  }
+
+  &:hover::after, &:focus::after {
+    opacity: 1;
+    transform: scale(1.33);
+  }
 }

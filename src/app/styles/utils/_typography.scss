@@ -53,3 +53,17 @@
 .fs-600 {
     line-height: 1.1;
 }
+
+.numbered-title {
+  @extend .uppercase;
+  @extend .ff-sans-cond;
+  @extend .fs-500;
+  letter-spacing: 4.72px;
+  
+  span {
+    @extend .letter-spacing-2;
+    margin-right: .5em;
+    font-weight: 700;
+    @include text-colour($clr-white, 20%);
+  }
+}

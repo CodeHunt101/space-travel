@@ -1,7 +1,7 @@
-@mixin bg-colour($colour) {
-  background-color: hsl($colour);
+@mixin bg-colour($colour, $alpha: 100%) {
+  background-color: #{'hsl(#{$colour} / #{$alpha})'};
 }
 
-@mixin text-colour($colour) {
-  color: hsl($colour);
+@mixin text-colour($colour, $alpha: 100%) {
+  color: #{'hsl(#{$colour} / #{$alpha})'};
 }

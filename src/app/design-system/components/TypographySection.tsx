@@ -1,6 +1,6 @@
 const TypographySection = () => (
   <section id="typography" style={{ margin: '4rem 0' }}>
-    <h2>
+    <h2 className="numbered-title">
       <span>02 </span>Typography
     </h2>
     <div className="flex">

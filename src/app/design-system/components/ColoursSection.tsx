@@ -1,6 +1,6 @@
 const ColoursSection = () => (
   <section id="colors">
-    <h2>
+    <h2 className="numbered-title">
       <span>01</span> colors
     </h2>
     <div className="flex">

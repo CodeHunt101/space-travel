@@ -1,3 +1,4 @@
+import Dots from './Dots'
 import LargeButton from './LargeButton'
 import NavBar from './NavBar'
 import Tabs from './Tabs'
@@ -16,11 +17,20 @@ const InteractiveElements = () => (
         <LargeButton />
       </div>
 
-      <div style={{ marginBottom: '50vh' }}>
+      <div
+        className="flow"
+        style={
+          {
+            marginBottom: '50vh',
+            '--flow-space': '4rem',
+          } as React.CSSProperties
+        }
+      >
         {/* Tabs */}
         <Tabs />
 
         {/* Dots */}
+        <Dots />
 
         {/* Numbers */}
       </div>

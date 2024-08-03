@@ -1,19 +1,21 @@
 @import './spacings', './colours', './typography';
 
-.underline-indicators > * {
-  padding: var(--underline-gap, $default-underline-gap) 0;
-  cursor: pointer;
-  border: 0;
-  border-bottom: .2rem solid #{'hsl(#{$clr-white} / 0)'}
-}
+.underline-indicators {
+  > * {
+    padding: var(--underline-gap, $default-underline-gap) 0;
+    cursor: pointer;
+    border: 0;
+    border-bottom: .2rem solid #{'hsl(#{$clr-white} / 0)'};
 
-.underline-indicators > *:hover, 
-.underline-indicators > *:focus {
-  border-color: #{'hsl(#{$clr-white} / 50%)'}
-}
+    &:hover,
+    &:focus {
+      border-color: #{'hsl(#{$clr-white} / 50%)'};
+    }
+  }
 
-.underline-indicators > .active,
-.underline-indicators > [aria-selected="true"] {
-  color: #{'hsl(#{$clr-white} / 100%)'};
-  border-color: #{'hsl(#{$clr-white} / 100%)'}
+  > .active,
+  > [aria-selected="true"] {
+    color: #{'hsl(#{$clr-white} / 100%)'};
+    border-color: #{'hsl(#{$clr-white} / 100%)'};
+  }
 }

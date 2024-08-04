@@ -19,10 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${barlowCondensed} ${bellefair} ${barlow}`}>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
         <header className="sticky">
           <section className={`${styles.menu} flex`}>
             <div className={`${styles.logo} flex`}>
-              <Image src={logo} alt="Logo" />
+              <Image src={logo} alt="Space travel website logo" />
             </div>
             <NavBar />
           </section>

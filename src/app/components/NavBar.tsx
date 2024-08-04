@@ -18,16 +18,24 @@ const NavBar = () => {
         isMenuOpen ? styles.open : styles.closed
       }`}
     >
-      <button className={styles.hamburger} onClick={toggleMenu}>
+      <button
+        className={styles.hamburger}
+        onClick={toggleMenu}
+        aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+      >
         <Image
           src={isMenuOpen ? iconClose : iconHamburger}
-          alt="collapsible menu icon"
+          alt={isMenuOpen ? 'Close menu icon' : 'Open menu icon'}
         />
       </button>
       <nav className={styles.navbar}>
         <ul className={`underline-indicators ${isMenuOpen ? styles.open : ''}`}>
           <li className="active">
-            <a className="uppercase text-white letter-spacing-2" href="#">
+            <a
+              className="uppercase text-white letter-spacing-2"
+              href="#"
+              aria-current="page"
+            >
               <span>00</span>Home
             </a>
           </li>

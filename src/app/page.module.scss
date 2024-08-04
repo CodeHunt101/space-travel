@@ -1,5 +1,5 @@
-@import "./styles/mixins";
-@import "./styles/variables";
+@import './styles/mixins';
+@import './styles/variables';
 
 .home {
   position: relative;
@@ -10,16 +10,17 @@
   @include md {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vh;
     height: 100vw;
-    background-image: url("../../public/assets/home/background.jpg");
+    background-image: url('../../public/assets/home/background.jpg');
     background-size: cover;
     background-position: center;
     transform: translate(-50%, -50%) rotate(90deg);
@@ -47,6 +48,15 @@
       margin-inline: 5em;
       padding-bottom: 5%;
     }
+
+    @include lg {
+      justify-content: space-between;
+      flex-direction: row;
+      margin-inline: 6.5em;
+      margin-top: 20%;
+      text-align: start;
+      width: 100%;
+    }
   }
 
   h1 {
@@ -69,5 +79,6 @@
 
   p {
     line-height: 2;
+    max-width: 540px;
   }
 }

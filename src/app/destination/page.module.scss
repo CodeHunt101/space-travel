@@ -1,0 +1,10 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.destination {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../public/assets/destination/background.jpg");
+  background-size: cover;
+  background-position: center;
+}

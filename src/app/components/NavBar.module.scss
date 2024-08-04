@@ -1,0 +1,102 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+// Navbar styles
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+// Primary navigation styles
+.primary-navigation {
+  width: 14em;
+
+  &.open {
+    @include bg-colour($clr-white, 5%);
+    backdrop-filter: blur(5px);
+  }
+
+  &.closed {
+    backdrop-filter: blur(0px);
+  }
+
+  // Hamburger menu styles
+  .hamburger {
+    position: static;
+    display: block;
+    margin: 2em 1.5em 0 auto;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+
+    @include md {
+      position: relative;
+      margin: 0;
+      display: none;
+    }
+  }
+
+  @include md {
+    min-width: 640px;
+
+    &.open,
+    &.closed {
+      display: flex;
+      @include bg-colour($clr-white, 5%);
+      backdrop-filter: blur(15px);
+    }
+  }
+
+  @include lg {
+    min-width: 736px;
+  }
+
+  // Navigation list styles
+  ul {
+    --underline-gap: 2rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s ease-in-out,
+      visibility 0.5s ease-in-out;
+
+    &.open {
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      visibility: visible;
+
+      @include md {
+        flex-direction: row;
+      }
+    }
+
+    @include md {
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      opacity: 1;
+      visibility: visible;
+
+      .open {
+        flex-direction: row;
+      }
+    }
+
+    // Navigation link styles
+    a {
+      text-decoration: none;
+
+      span {
+        margin-right: 0.5em;
+        font-weight: 700;
+      }
+    }
+  }
+}

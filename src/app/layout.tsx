@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
 import './styles/globals.scss'
+import styles from './layout.module.scss'
 import { barlow, barlowCondensed, bellefair } from './utils/fonts'
+import Image from 'next/image'
+import logo from '../../public/assets/shared/logo.svg'
+import NavBar from './components/NavBar'
 
 export const metadata: Metadata = {
   title: 'Space travel website',
@@ -14,9 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${barlowCondensed} ${bellefair} ${barlow}`}
-      >
+      <body className={`${barlowCondensed} ${bellefair} ${barlow}`}>
+        <header className="sticky">
+          <section className={`${styles.menu} flex`}>
+            <div className={`${styles.logo} flex`}>
+              <Image src={logo} alt="Logo" />
+            </div>
+            <NavBar />
+          </section>
+        </header>
         {children}
       </body>
     </html>

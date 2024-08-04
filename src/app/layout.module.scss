@@ -1,0 +1,29 @@
+@import "./styles/mixins";
+@import "./styles/variables";
+
+.menu {
+  justify-content: space-between;
+}
+
+.logo {
+  position: static;
+  margin: 1.5em auto 0 1.5em;
+  width: 5em;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
+
+  @include md {
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin: 0;
+
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
+}

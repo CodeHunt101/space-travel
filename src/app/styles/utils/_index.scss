@@ -1,21 +1,36 @@
-@import './spacings', './colours', './typography';
+@import "./spacings", "./colours", "./typography";
 
 .underline-indicators {
   > * {
     padding: var(--underline-gap, $default-underline-gap) 0;
     cursor: pointer;
     border: 0;
-    border-bottom: .2rem solid #{'hsl(#{$clr-white} / 0)'};
+    border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
 
     &:hover,
     &:focus {
-      border-color: #{'hsl(#{$clr-white} / 50%)'};
+      border-color: #{"hsl(#{$clr-white} / 50%)"};
     }
   }
 
   > .active,
   > [aria-selected="true"] {
-    color: #{'hsl(#{$clr-white} / 100%)'};
-    border-color: #{'hsl(#{$clr-white} / 100%)'};
+    color: #{"hsl(#{$clr-white} / 100%)"};
+    border-color: #{"hsl(#{$clr-white} / 100%)"};
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+
+  + main {
+    padding-top: 4em;
+
+    @include md {
+      padding-top: 5.5em;
+    }
   }
 }

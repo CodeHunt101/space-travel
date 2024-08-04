@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import styles from './NavBar.module.scss'
 import Image from 'next/image'
-import hamburger from '../../../public/assets/shared/icon-hamburger.svg'
+import iconHamburger from '../../../public/assets/shared/icon-hamburger.svg'
+import iconClose from '../../../public/assets/shared/icon-close.svg'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,7 +19,10 @@ const NavBar = () => {
       }`}
     >
       <button className={styles.hamburger} onClick={toggleMenu}>
-        <Image src={hamburger} alt="hamburger-menu-button" />
+        <Image
+          src={isMenuOpen ? iconClose : iconHamburger}
+          alt="collapsible menu icon"
+        />
       </button>
       <nav className={styles.navbar}>
         <ul className={`underline-indicators ${isMenuOpen ? styles.open : ''}`}>

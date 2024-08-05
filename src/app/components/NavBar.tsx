@@ -31,6 +31,7 @@ const NavBar = () => {
 
   return (
     <div
+      data-testid = "nav-wrapper"
       className={`${styles['primary-navigation']} ${
         isMenuOpen ? styles.open : styles.closed
       }`}

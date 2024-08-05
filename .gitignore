@@ -38,3 +38,6 @@ next-env.d.ts
 #figma
 /figma
 *.fig
+
+#lighthouse
+lighthouse-config.json

@@ -37,7 +37,7 @@ const NavBar = () => {
   }, [handleClickOutside])
 
   const renderNavItem = (path: Path, label: string, index: string) => (
-    <li className={`${pathname === path ? 'active' : ''} flex`} key={path}>
+    <li className={`${pathname === path ? 'active' : ''} flex`} key={path + Math.random()}>
       <Link
         className="uppercase text-white letter-spacing-2"
         href={path}

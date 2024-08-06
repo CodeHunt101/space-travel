@@ -3,6 +3,7 @@ export enum Path {
   DESTINATION = '/destination',
   CREW = '/crew',
   TECHNOLOGY = '/technology',
+  NOT_READY="#"
 }
 
 export enum BreakPoints {

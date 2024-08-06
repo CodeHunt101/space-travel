@@ -27,7 +27,6 @@ export default function RootLayout({
             <div className={`${styles.logo} flex`}>
               <Image src={logo} alt="Space travel website logo" />
             </div>
-            <div className={`${styles['horizontal-line']}`} />
             <NavBar />
           </section>
         </header>

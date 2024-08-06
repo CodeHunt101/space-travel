@@ -38,6 +38,7 @@
     background-color: transparent;
     border: none;
     padding: 0;
+    cursor: pointer;
 
     @include md {
       position: relative;
@@ -75,12 +76,10 @@
   // Navigation list styles
   ul {
     margin: 0;
-    list-style: none;
     opacity: 0;
     visibility: hidden;
     transition:
-      opacity 0.5s ease-in-out,
-      visibility 0.5s ease-in-out;
+      opacity 0.5s ease-in-out;
 
     &.open {
       display: flex;

@@ -61,6 +61,8 @@ const NavBar = () => {
         className={styles.hamburger}
         onClick={toggleMenu}
         aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+        aria-controls="primary-navigation"
+        aria-expanded={isMenuOpen}
       >
         <Image
           src={isMenuOpen ? iconClose : iconHamburger}
@@ -69,6 +71,7 @@ const NavBar = () => {
       </button>
       <nav className={styles.navbar}>
         <ul
+          id="primary-navigation"
           className={`underline-indicators ff-sans-cond fs-300 ${
             isMenuOpen ? styles.open : ''
           }`}

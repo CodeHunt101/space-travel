@@ -8,6 +8,13 @@
   align-items: center;
   flex-direction: column;
   width: 100%;
+  height: 100vh;
+  margin-top: 3rem;
+
+  @include md {
+    height: auto;
+    margin-top: auto;
+  }
 }
 
 // Primary navigation styles
@@ -56,8 +63,7 @@
 
   // Navigation list styles
   ul {
-    --underline-gap: 2rem;
-    padding: 0;
+    
     margin: 0;
     list-style: none;
     opacity: 0;
@@ -71,8 +77,8 @@
       flex-direction: column;
       opacity: 1;
       visibility: visible;
-
       @include md {
+        --list-height: 4rem
         flex-direction: row;
       }
     }
@@ -80,9 +86,11 @@
     @include md {
       display: flex;
       width: 100%;
+      padding: 0;
       justify-content: space-evenly;
       opacity: 1;
       visibility: visible;
+      --list-height: 4rem;
 
       .open {
         flex-direction: row;
@@ -90,6 +98,14 @@
     }
 
     // Navigation link styles
+    li {
+      margin: 1em 0;
+
+      @include md {
+        margin: 0 0;
+      }
+    }
+
     a {
       text-decoration: none;
 

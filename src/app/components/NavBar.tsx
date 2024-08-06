@@ -1,12 +1,13 @@
 'use client'
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import styles from './NavBar.module.scss'
 import Image from 'next/image'
 import iconHamburger from '../../../public/assets/shared/icon-hamburger.svg'
 import iconClose from '../../../public/assets/shared/icon-close.svg'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Path } from '../utils/types'
+import { BreakPoints, Path } from '../utils/types'
+import useScreenSizeHandler from '../hooks/useScreenSizeHandler'
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -16,8 +17,10 @@ const NavBar = () => {
     setIsMenuOpen((prev) => !prev)
   }, [])
 
+  useScreenSizeHandler(setIsMenuOpen, false, BreakPoints.MD)
+
   const renderNavItem = (path: Path, label: string, index: string) => (
-    <li className={pathname === path ? 'active' : ''}>
+    <li className={`${pathname === path ? 'active' : ''} flex`}>
       <Link
         className="uppercase text-white letter-spacing-2"
         href={path}
@@ -31,7 +34,7 @@ const NavBar = () => {
 
   return (
     <div
-      data-testid = "nav-wrapper"
+      data-testid="nav-wrapper"
       className={`${styles['primary-navigation']} ${
         isMenuOpen ? styles.open : styles.closed
       }`}
@@ -47,7 +50,7 @@ const NavBar = () => {
         />
       </button>
       <nav className={styles.navbar}>
-        <ul className={`underline-indicators ${isMenuOpen ? styles.open : ''}`}>
+        <ul className={`underline-indicators ff-sans-cond fs-300 ${isMenuOpen ? styles.open : ''}`}>
           {renderNavItem(Path.HOME, 'Home', '00')}
           {renderNavItem(Path.DESTINATION, 'Destination', '01')}
           {renderNavItem(Path.CREW, 'Crew', '02')}

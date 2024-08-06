@@ -1,6 +1,12 @@
 @import "./styles/mixins";
 @import "./styles/variables";
 
+#main-header {
+  @include lg {
+    margin-top: 2.5rem;
+  }
+}
+
 .menu {
   justify-content: space-between;
 }

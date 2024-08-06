@@ -1,15 +1,31 @@
 @import "./spacings", "./colours", "./typography";
 
 .underline-indicators {
-  > * {
-    padding: var(--underline-gap, $default-underline-gap) 0;
-    cursor: pointer;
-    border: 0;
-    border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
 
-    &:hover,
-    &:focus {
-      border-color: #{"hsl(#{$clr-white} / 50%)"};
+  width: 100%;
+  padding-left: 2em;
+
+  > * {
+    align-items: center;
+    height: var(--list-height, $default-list-height);
+    border: 0;
+
+    @include sm {
+      border-right: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+      &:focus {
+        border-color: #{"hsl(#{$clr-white} / 50%)"};
+      }
+    }
+
+    @include md {
+      cursor: pointer;
+      border-right: 0;
+      border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+      padding: 1.4em 0;
+      &:hover,
+      &:focus {
+        border-color: #{"hsl(#{$clr-white} / 50%)"};
+      }
     }
   }
 
@@ -26,7 +42,7 @@
   width: 100%;
   z-index: 999;
 
-  + main {
+  ~ main:first-of-type {
     padding-top: 4em;
 
     @include md {

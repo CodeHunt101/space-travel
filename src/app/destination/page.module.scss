@@ -7,4 +7,81 @@
   background-image: url("../../../public/assets/destination/background.webp");
   background-size: cover;
   background-position: center;
+
+  h1 {
+    text-align: center;
+
+    @include md {
+      text-align: start;
+    }
+  }
+
+  #destination-data {
+    flex-direction: column;
+    align-items: center;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+
+  
+
+  img {
+    width: 150px;
+    height: 150px;
+    @include md {
+      width: 300px;
+      height: 300px
+    }
+    @include lg {
+      width: 480px;
+      height: 480px
+    }
+  }
+
+  h2 {
+    line-height: 1.5;
+    font-size: $fs-700;
+    text-align: center;
+
+    @include md {
+      font-size: $fs-800;
+    }
+
+    @include lg {
+      text-align: start;
+    }
+  }
+
+  p {
+    line-height: 2;
+    max-width: 540px;
+    text-align: center;
+
+    @include lg {
+      text-align: start;
+    }
+  }
+
+  hr {
+    border: 0;
+    border-bottom: 1px solid #{'hsl(#{$clr-white} / 30%)'};
+  }
+
+  #interesting-facts {
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    @include lg {
+      justify-content: center;
+      text-align: start;
+    }
+  }
 }

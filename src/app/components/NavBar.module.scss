@@ -3,7 +3,7 @@
 
 // Navbar styles
 .navbar {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -11,7 +11,12 @@
   height: 100vh;
   margin-top: 3rem;
 
+  &.open {
+    display: flex
+  }
+
   @include md {
+    display: flex;
     height: auto;
     margin-top: auto;
   }
@@ -77,7 +82,7 @@
   ul {
     margin: 0;
     opacity: 0;
-    visibility: hidden;
+    display: none;
     transition:
       opacity 0.5s ease-in-out;
 
@@ -85,7 +90,6 @@
       display: flex;
       flex-direction: column;
       opacity: 1;
-      visibility: visible;
       @include md {
         --list-height: 4rem flex-direction: row;
       }

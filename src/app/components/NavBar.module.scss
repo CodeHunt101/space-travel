@@ -59,11 +59,21 @@
 
   @include lg {
     min-width: 736px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 97%;
+      width: calc(90vw - 100%);
+      padding-left: 2em;
+      height: 1px;
+      @include bg-colour($clr-white, 50%);
+    }
   }
 
   // Navigation list styles
   ul {
-    
     margin: 0;
     list-style: none;
     opacity: 0;
@@ -78,8 +88,7 @@
       opacity: 1;
       visibility: visible;
       @include md {
-        --list-height: 4rem
-        flex-direction: row;
+        --list-height: 4rem flex-direction: row;
       }
     }
 

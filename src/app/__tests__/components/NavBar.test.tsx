@@ -106,4 +106,30 @@ describe('NavBar Component', () => {
     const destinationLink = screen.getByText('Destination').closest('li')
     expect(destinationLink).not.toHaveClass('active')
   })
+
+  test('closes menu when clicking outside', () => {
+    render(<NavBar />)
+
+    const button = screen.getByRole('button', { name: /open menu/i })
+    fireEvent.click(button)
+
+    const navWrapper = screen.getByTestId('nav-wrapper')
+    expect(navWrapper).toHaveClass('open')
+
+    fireEvent.mouseDown(document)
+    expect(navWrapper).toHaveClass('closed')
+  })
+
+  test('does not close menu when clicking inside', () => {
+    render(<NavBar />)
+
+    const button = screen.getByRole('button', { name: /open menu/i })
+    fireEvent.click(button)
+
+    const navWrapper = screen.getByTestId('nav-wrapper')
+    expect(navWrapper).toHaveClass('open')
+
+    fireEvent.mouseDown(navWrapper)
+    expect(navWrapper).toHaveClass('open')
+  })
 })

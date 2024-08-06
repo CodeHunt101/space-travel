@@ -1,5 +1,5 @@
 'use client'
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
 import styles from './NavBar.module.scss'
 import Image from 'next/image'
 import iconHamburger from '../../../public/assets/shared/icon-hamburger.svg'
@@ -12,15 +12,32 @@ import useScreenSizeHandler from '../hooks/useScreenSizeHandler'
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const pathname = usePathname()
+  const navWrapperRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = useCallback(() => {
     setIsMenuOpen((prev) => !prev)
   }, [])
 
+  const handleClickOutside = useCallback((event: MouseEvent) => {
+    if (
+      navWrapperRef.current &&
+      !navWrapperRef.current.contains(event.target as HTMLDivElement)
+    ) {
+      setIsMenuOpen(false)
+    }
+  }, [])
+
   useScreenSizeHandler(setIsMenuOpen, false, BreakPoints.MD)
 
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [handleClickOutside])
+
   const renderNavItem = (path: Path, label: string, index: string) => (
-    <li className={`${pathname === path ? 'active' : ''} flex`}>
+    <li className={`${pathname === path ? 'active' : ''} flex`} key={path}>
       <Link
         className="uppercase text-white letter-spacing-2"
         href={path}
@@ -34,6 +51,7 @@ const NavBar = () => {
 
   return (
     <div
+      ref={navWrapperRef}
       data-testid="nav-wrapper"
       className={`${styles['primary-navigation']} ${
         isMenuOpen ? styles.open : styles.closed
@@ -50,7 +68,11 @@ const NavBar = () => {
         />
       </button>
       <nav className={styles.navbar}>
-        <ul className={`underline-indicators ff-sans-cond fs-300 ${isMenuOpen ? styles.open : ''}`}>
+        <ul
+          className={`underline-indicators ff-sans-cond fs-300 ${
+            isMenuOpen ? styles.open : ''
+          }`}
+        >
           {renderNavItem(Path.HOME, 'Home', '00')}
           {renderNavItem(Path.DESTINATION, 'Destination', '01')}
           {renderNavItem(Path.CREW, 'Crew', '02')}

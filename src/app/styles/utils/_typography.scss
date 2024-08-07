@@ -64,6 +64,6 @@
     @extend .letter-spacing-2;
     margin-right: .5em;
     font-weight: 700;
-    @include text-colour($clr-white, 20%);
+    @include text-colour($clr-white, 35%);
   }
 }

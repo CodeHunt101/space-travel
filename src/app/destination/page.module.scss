@@ -10,11 +10,13 @@
 
   .content-wrapper {
     padding-top: 2.666em;
+    width: 90%;
+    
 
     h1 {
       text-align: center;
 
-      @include md {
+      @include lg {
         text-align: start;
       }
     }
@@ -23,8 +25,9 @@
       flex-direction: column;
       align-items: center;
 
-      @include md {
+      @include lg {
         flex-direction: row;
+        gap: 6em;
       }
     }
 
@@ -61,9 +64,15 @@
       line-height: 2;
       max-width: 540px;
       text-align: center;
+      font-size: $fs-200;
+
+      @include md {
+        font-size: $fs-300;
+      }
 
       @include lg {
         text-align: start;
+        font-size: $fs-400;
       }
     }
 
@@ -79,11 +88,16 @@
       padding-bottom: 1.333em;
       @include md {
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
+      }
+      @include lg {
+        justify-content: flex-start;
+        gap: 5em;
       }
 
       p {
         line-height: 2;
+        font-size: $fs-500;
       }
     }
 

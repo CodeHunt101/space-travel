@@ -49,7 +49,7 @@ const Destination: React.FC = () => {
                 onTabChange={handleTabChange}
               />
             </Suspense>
-            <h2 className="uppercase fs-900 ff-serif letter-spacing-2">
+            <h2 className="uppercase fs-900 ff-serif letter-spacing-2 text-white">
               {currentDestination.name}
             </h2>
             <p className="ff-sans-normal text-accent fs-300">
@@ -61,7 +61,7 @@ const Destination: React.FC = () => {
                 <h3 className="uppercase ff-sans-cond fs-200 letter-spacing-2">
                   Avg. Distance
                 </h3>
-                <p className="uppercase fs-500">
+                <p className="uppercase text-white">
                   {currentDestination.distance}
                 </p>
               </div>
@@ -69,7 +69,7 @@ const Destination: React.FC = () => {
                 <h3 className="uppercase ff-sans-cond fs-200 letter-spacing-2">
                   Est. Travel Time
                 </h3>
-                <p className="uppercase fs-500">{currentDestination.travel}</p>
+                <p className="uppercase text-white">{currentDestination.travel}</p>
               </div>
             </div>
           </div>

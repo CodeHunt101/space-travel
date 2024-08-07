@@ -6,9 +6,9 @@ import Tabs from '../components/Tabs'
 const Destination = () => {
   return (
     <main className={`${styles.destination} text-accent ff-serif text-accent`}>
-      <section className="container">
+      <section className={`container ${styles["content-wrapper"]}`}>
         <h1 className="numbered-title">
-          <span>01</span> Pick your destination
+          <span>01</span>Pick your destination
         </h1>
         <div id={styles['destination-data']} className="flex">
           <Image src={moonImage} alt="The Moon" />

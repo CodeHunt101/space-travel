@@ -2,86 +2,98 @@
 @import "../styles/variables";
 
 .destination {
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   background-image: url("../../../public/assets/destination/background.webp");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
-  h1 {
-    text-align: center;
+  .content-wrapper {
 
-    @include md {
-      text-align: start;
-    }
-  }
+    padding-top: 2.666em;
 
-  #destination-data {
-    flex-direction: column;
-    align-items: center;
+    h1 {
+      text-align: center;
 
-    @include md {
-      flex-direction: row;
-    }
-  }
-
-  
-
-  img {
-    width: 150px;
-    height: 150px;
-    @include md {
-      width: 300px;
-      height: 300px
-    }
-    @include lg {
-      width: 480px;
-      height: 480px
-    }
-  }
-
-  h2 {
-    line-height: 1.5;
-    font-size: $fs-700;
-    text-align: center;
-
-    @include md {
-      font-size: $fs-800;
+      @include md {
+        text-align: start;
+      }
     }
 
-    @include lg {
-      text-align: start;
+    #destination-data {
+      flex-direction: column;
+      align-items: center;
+
+      @include md {
+        flex-direction: row;
+      }
     }
-  }
 
-  p {
-    line-height: 2;
-    max-width: 540px;
-    text-align: center;
-
-    @include lg {
-      text-align: start;
+    img {
+      margin-top: 2.805em;
+      margin-bottom: 2.805em;
+      width: 150px;
+      height: 150px;
+      @include md {
+        width: 300px;
+        height: 300px;
+      }
+      @include lg {
+        width: 480px;
+        height: 480px;
+      }
     }
-  }
 
-  hr {
-    border: 0;
-    border-bottom: 1px solid #{'hsl(#{$clr-white} / 30%)'};
-  }
+    h2 {
+      line-height: 2;
+      font-size: $fs-700;
+      text-align: center;
 
-  #interesting-facts {
-    flex-direction: column;
-    @include md {
-      flex-direction: row;
-      justify-content: center;
+      @include md {
+        font-size: $fs-800;
+      }
+
+      @include lg {
+        text-align: start;
+      }
     }
-  }
 
-  h3 {
-    text-align: center;
-    @include lg {
-      justify-content: center;
-      text-align: start;
+    p {
+      line-height: 2;
+      max-width: 540px;
+      text-align: center;
+
+      @include lg {
+        text-align: start;
+      }
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #{"hsl(#{$clr-white} / 30%)"};
+      margin: 1.333em 0;
+    }
+
+    #interesting-facts {
+      flex-direction: column;
+      gap: 1em;
+      @include md {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      p {
+        line-height: 2;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      @include lg {
+        justify-content: center;
+        text-align: start;
+      }
     }
   }
 }

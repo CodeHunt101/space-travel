@@ -3,8 +3,8 @@
 
 .home {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
   overflow: hidden;
 
   @include md {
@@ -23,6 +23,7 @@
     background-image: url('../../public/assets/home/background.webp');
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     transform: translate(-50%, -50%) rotate(90deg);
 
     @include lg {
@@ -34,16 +35,17 @@
 
   .hero {
     display: flex;
+    gap: 8rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    padding-bottom: 30%;
     position: relative;
     z-index: 1;
     height: 100%;
 
     @include md {
+      gap: 1rem;
       justify-content: space-evenly;
       margin-inline: 5em;
       padding-bottom: 5%;

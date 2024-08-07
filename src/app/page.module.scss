@@ -3,8 +3,8 @@
 
 .home {
   position: relative;
-  min-width: 100vw;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 
   @include md {
@@ -19,7 +19,7 @@
     top: 50%;
     left: 50%;
     width: 100vh;
-    height: 100vw;
+    min-height: 100vw;
     background-image: url('../../public/assets/home/background.webp');
     background-size: cover;
     background-position: center;
@@ -35,17 +35,16 @@
 
   .hero {
     display: flex;
-    gap: 8rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-between;
+    padding-bottom: 30%;
     position: relative;
     z-index: 1;
     height: 100%;
 
     @include md {
-      gap: 1rem;
       justify-content: space-evenly;
       margin-inline: 5em;
       padding-bottom: 5%;

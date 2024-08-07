@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Space travel website',
   description:
     "If you're a fan of the universe, immerse yourself in our website full of remarkable universe content.",
+  // metadataBase: new URL('/') Not needed for vercel
 }
 
 export default function RootLayout({

@@ -1,10 +1,12 @@
+import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
 import styles from './layout.module.scss'
 import { barlow, barlowCondensed, bellefair } from './utils/fonts'
 import Image from 'next/image'
 import logo from '../../public/assets/shared/logo.svg'
-import NavBar from './components/NavBar'
+
+const NavBar = React.lazy(() => import('./components/NavBar'))
 
 export const metadata: Metadata = {
   title: 'Space travel website',
@@ -29,7 +31,9 @@ export default function RootLayout({
             <div className={`${styles.logo} flex`}>
               <Image src={logo} alt="Space travel website logo" />
             </div>
-            <NavBar />
+            <Suspense fallback={<div>Loading navigation...</div>}>
+              <NavBar />
+            </Suspense>
           </section>
         </header>
         {children}

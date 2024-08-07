@@ -1,19 +1,23 @@
+import React, { Suspense } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import moonImage from '../../../public/assets/destination/moon.webp'
-import Tabs from '../components/Tabs'
 
-const Destination = () => {
+const Tabs = React.lazy(() => import('../components/Tabs'))
+
+const Destination: React.FC = () => {
   return (
     <main className={`${styles.destination} text-accent ff-serif text-accent`}>
-      <section className={`container ${styles["content-wrapper"]}`}>
+      <section className={`container ${styles['content-wrapper']}`}>
         <h1 className="numbered-title">
           <span>01</span>Pick your destination
         </h1>
         <div id={styles['destination-data']} className="flex">
           <Image src={moonImage} alt="The Moon" />
           <div>
-            <Tabs items={['Moon', 'Mars', 'Europa', 'Titan']} />
+            <Suspense fallback={<div>Loading tabs...</div>}>
+              <Tabs items={['Moon', 'Mars', 'Europa', 'Titan']} />
+            </Suspense>
             <h2 className="uppercase fs-900 ff-serif letter-spacing-2">Moon</h2>
             <p className="ff-sans-normal text-accent fs-300">
               See our planet as you’ve never seen it before. A perfect relaxing

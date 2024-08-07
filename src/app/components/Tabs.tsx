@@ -3,11 +3,18 @@
 import { useState } from 'react'
 import styles from './Tabs.module.scss'
 
-const Tabs = ({ items }: { items: string[] }) => {
+const Tabs = ({
+  items,
+  onTabChange,
+}: {
+  items: string[]
+  onTabChange: (tabName: string) => void
+}) => {
   const [selectedTab, setSelectedTab] = useState<number>(0)
 
   const handleClick = (index: number) => {
     setSelectedTab(index)
+    onTabChange(items[index])
   }
 
   return (

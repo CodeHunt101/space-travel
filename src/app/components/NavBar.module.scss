@@ -3,6 +3,7 @@
 
 // Navbar styles
 .navbar {
+  display: none;
   opacity: 0;
   justify-content: space-between;
   align-items: center;
@@ -10,13 +11,16 @@
   width: 100%;
   height: 100vh;
   margin-top: 3rem;
+  display: none;
 
   &.open {
+    display: flex;
     opacity: 1;
     transition: opacity 0.5s ease;
   }
 
   @include md {
+    display: flex;
     height: auto;
     margin-top: auto;
     opacity: 1;
@@ -81,6 +85,7 @@
 
   // Navigation list styles
   ul {
+    display: none;
     margin: 0;
     padding-left: 2em;
 

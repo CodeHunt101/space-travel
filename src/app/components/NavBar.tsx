@@ -72,7 +72,7 @@ const NavBar = () => {
           alt={isMenuOpen ? 'Close menu icon' : 'Open menu icon'}
         />
       </button>
-      <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''} flex`}>
+      <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''}`}>
         <ul
           id="primary-navigation"
           className={`underline-indicators ff-sans-cond fs-300 ${

@@ -45,7 +45,6 @@ const NavBar = () => {
         className="uppercase text-white letter-spacing-2"
         href={path}
         aria-current={pathname === path ? 'page' : undefined}
-        onClick={toggleMenu}
       >
         <span aria-hidden>{index}</span>
         {label}

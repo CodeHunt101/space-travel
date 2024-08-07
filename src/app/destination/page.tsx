@@ -32,7 +32,7 @@ const Destination: React.FC = () => {
   return (
     <main className={`${styles.destination} text-accent ff-serif text-accent`}>
       <section className={`container ${styles['content-wrapper']}`}>
-        <h1 className="numbered-title">
+        <h1 className="numbered-title text-white">
           <span>01</span>Pick your destination
         </h1>
         <div id={styles['destination-data']} className="flex">
@@ -42,7 +42,7 @@ const Destination: React.FC = () => {
             width={445}
             height={445}
           />
-          <div>
+          <div className={styles.information}>
             <Suspense fallback={<div>Loading tabs...</div>}>
               <Tabs
                 items={destinations.map((dest) => dest.name)}

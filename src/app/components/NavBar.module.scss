@@ -110,7 +110,7 @@
       --list-height: 1.188em;
       --element-border-right: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
       @include md {
-        --list-height: 4rem;
+        --list-height: 6rem;
         margin: 0 0;
         --element-border-right: 0;
         --element-border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};

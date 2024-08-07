@@ -11,9 +11,9 @@ export default function Home() {
         <div>
           <h1
             id="hero-heading"
-            className="uppercase fs-400 ff-sans-cond letter-spacing-2"
+            className="uppercase fs-400 ff-sans-cond letter-spacing-1"
           >
-            So, you want to travel to<span className="uppercase ff-serif">Space</span>
+            So, you want to travel to<span className="uppercase ff-serif text-white">Space</span>
           </h1>
           <p className="ff-sans-normal text-accent fs-300">
             Let’s face it; if you want to go to space, you might as well

@@ -39,6 +39,7 @@
     text-align: center;
     justify-content: space-between;
     padding-bottom: 30%;
+    padding-top: 5em;
     position: relative;
     z-index: 1;
     height: 100%;
@@ -64,6 +65,7 @@
     font-size: $fs-400;
 
     @include md {
+      line-height: 1;
       font-size: $fs-500;
     }
 

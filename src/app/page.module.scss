@@ -1,9 +1,8 @@
-@import './styles/mixins';
-@import './styles/variables';
+@import "./styles/mixins";
+@import "./styles/variables";
 
 .home {
   position: relative;
-  width: 100vw;
   height: 100vh;
   overflow: hidden;
 
@@ -14,13 +13,13 @@
   }
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100vh;
     min-height: 100vw;
-    background-image: url('../../public/assets/home/background.webp');
+    background-image: url("../../public/assets/home/background.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

@@ -37,7 +37,10 @@ const NavBar = () => {
   }, [handleClickOutside])
 
   const renderNavItem = (path: Path, label: string, index: string) => (
-    <li className={`${pathname === path ? 'active' : ''} flex`} key={path + Math.random()}>
+    <li
+      className={`${pathname === path ? 'active' : ''} flex`}
+      key={path + Math.random()}
+    >
       <Link
         className="uppercase text-white letter-spacing-2"
         href={path}
@@ -69,9 +72,7 @@ const NavBar = () => {
           alt={isMenuOpen ? 'Close menu icon' : 'Open menu icon'}
         />
       </button>
-      <nav className={`${styles.navbar} ${
-            isMenuOpen ? styles.open : ''
-          }`}>
+      <nav className={`${styles.navbar} ${isMenuOpen ? styles.open : ''} flex`}>
         <ul
           id="primary-navigation"
           className={`underline-indicators ff-sans-cond fs-300 ${

@@ -3,7 +3,7 @@
 
 // Navbar styles
 .navbar {
-  display: none;
+  opacity: 0;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -12,13 +12,14 @@
   margin-top: 3rem;
 
   &.open {
-    display: flex;
+    opacity: 1;
+    transition: opacity 0.5s ease;
   }
 
   @include md {
-    display: flex;
     height: auto;
     margin-top: auto;
+    opacity: 1;
   }
 }
 
@@ -81,32 +82,22 @@
   // Navigation list styles
   ul {
     margin: 0;
-    opacity: 0;
-    display: none;
     padding-left: 2em;
-    transition: opacity 0.5s ease-in-out;
 
     &.open {
       display: flex;
       flex-direction: column;
-      opacity: 1;
-      @include md {
-        --list-height: 4rem flex-direction: row;
-      }
     }
 
     @include md {
       display: flex;
+      flex-direction: row;
       width: 100%;
       padding: 0;
       justify-content: space-evenly;
       opacity: 1;
       visibility: visible;
       --list-height: 4rem;
-
-      .open {
-        flex-direction: row;
-      }
     }
 
     // Navigation link styles

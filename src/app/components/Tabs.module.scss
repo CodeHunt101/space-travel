@@ -1,3 +1,24 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
 .tab-list {
+  justify-content: center;
   gap: 2.5rem;
+  font-size: 0.875rem;
+
+  button {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0;
+    --list-height: 2.286em;
+    --element-border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+  }
+
+  @include md {
+    font-size: 1rem;
+  }
+
+  @include lg {
+    justify-content: start;
+  }
 }

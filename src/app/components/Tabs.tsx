@@ -16,7 +16,7 @@ const Tabs = ({ items }: { items: string[] }) => {
         <button
           key={item}
           aria-selected={selectedTab === index}
-          className="uppercase ff-sans-cond bg-dark text-accent letter-spacing-2"
+          className="uppercase ff-sans-cond text-accent letter-spacing-2"
           onClick={() => handleClick(index)}
         >
           {item}

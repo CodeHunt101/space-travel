@@ -43,7 +43,7 @@ const NavBar = () => {
         href={path}
         aria-current={pathname === path ? 'page' : undefined}
       >
-        <span>{index}</span>
+        <span aria-hidden>{index}</span>
         {label}
       </Link>
     </li>

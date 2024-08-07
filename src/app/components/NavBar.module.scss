@@ -12,7 +12,7 @@
   margin-top: 3rem;
 
   &.open {
-    display: flex
+    display: flex;
   }
 
   @include md {
@@ -83,8 +83,8 @@
     margin: 0;
     opacity: 0;
     display: none;
-    transition:
-      opacity 0.5s ease-in-out;
+    padding-left: 2em;
+    transition: opacity 0.5s ease-in-out;
 
     &.open {
       display: flex;
@@ -112,9 +112,16 @@
     // Navigation link styles
     li {
       margin: 1em 0;
-
+      --list-height: 1.188em;
+      --element-border-right: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
       @include md {
+        --list-height: 4rem;
         margin: 0 0;
+        --element-border-right: 0;
+        --element-border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+        * {
+          padding: 1.4em 0;
+        }
       }
     }
 

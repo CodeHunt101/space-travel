@@ -2,27 +2,25 @@
 
 .underline-indicators {
   width: 100%;
-  padding-left: 2em;
 
   > * {
+    background-color: transparent;
     align-items: center;
     height: var(--list-height, $default-list-height);
     border: 0;
-    border-right: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+    border-bottom: var(--element-border-bottom, none);
+    border-right: var(--element-border-right, none);
+    cursor: pointer;
     &:focus {
       border-color: #{"hsl(#{$clr-white} / 50%)"};
     }
 
     @include md {
-      cursor: pointer;
-      border-right: 0;
-      border-bottom: 0.2rem solid #{"hsl(#{$clr-white} / 0)"};
+      height: var(--list-height, $default-list-height);
+      border-bottom: var(--element-border-bottom, none);
       &:hover,
       &:focus {
         border-color: #{"hsl(#{$clr-white} / 50%)"};
-      }
-      * {
-        padding: 1.4em 0;
       }
     }
   }

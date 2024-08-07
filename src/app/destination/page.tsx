@@ -2,9 +2,8 @@ import React, { Suspense } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import moonImage from '../../../public/assets/destination/moon.webp'
-import Tabs from '../components/Tabs'
 
-// const Tabs = React.lazy(() => import('../components/Tabs'))
+const Tabs = React.lazy(() => import('../components/Tabs'))
 
 const Destination: React.FC = () => {
   return (
@@ -16,9 +15,9 @@ const Destination: React.FC = () => {
         <div id={styles['destination-data']} className="flex">
           <Image src={moonImage} alt="The Moon" />
           <div>
-            {/* <Suspense fallback={<div>Loading tabs...</div>}> */}
+            <Suspense fallback={<div>Loading tabs...</div>}>
               <Tabs items={['Moon', 'Mars', 'Europa', 'Titan']} />
-            {/* </Suspense> */}
+            </Suspense>
             <h2 className="uppercase fs-900 ff-serif letter-spacing-2">Moon</h2>
             <p className="ff-sans-normal text-accent fs-300">
               See our planet as you’ve never seen it before. A perfect relaxing

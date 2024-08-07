@@ -4,7 +4,7 @@ import { useState } from 'react'
 import styles from './Tabs.module.scss'
 
 const Tabs = ({ items }: { items: string[] }) => {
-  const [selectedTab, setSelectedTab] = useState<number | null>(null)
+  const [selectedTab, setSelectedTab] = useState<number>(0)
 
   const handleClick = (index: number) => {
     setSelectedTab(index)

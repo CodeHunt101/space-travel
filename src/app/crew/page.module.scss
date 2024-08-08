@@ -23,6 +23,7 @@
     h1 {
       text-align: center;
       font-size: $fs-300;
+      margin-bottom: 3.556em;
 
       @include md {
         font-size: 1.111em;
@@ -31,19 +32,6 @@
 
       @include lg {
         font-size: $fs-500;
-      }
-    }
-
-    h2 {
-      font-size: $fs-300;
-      span {
-        display: block;
-        line-height: 1.5;
-        font-size: $fs-500;
-  
-        @include md {
-          font-size: $fs-600;
-        }
       }
     }
 
@@ -61,11 +49,52 @@
         align-items: flex-start;
         gap: 6em;
       }
+
+      h2 {
+        font-size: $fs-400;
+        text-align: center;
+        @include text-colour($clr-white, 50%);
+        @include md {
+          font-size: 1.5rem;
+        }
+        @include lg {
+          font-size: $fs-600;
+        }
+        span {
+          display: block;
+          line-height: 1.5;
+          font-size: 1.5rem;
+
+          @include md {
+            font-size: 2.5rem;
+          }
+
+          @include lg {
+            font-size: $fs-700;
+          }
+        }
+      }
+
+      p {
+        line-height: 1.8;
+        max-width: 540px;
+        min-height: 11.5em;
+        text-align: center;
+        font-size: $fs-200;
+
+        @include md {
+          font-size: $fs-300;
+        }
+
+        @include lg {
+          text-align: start;
+          font-size: $fs-400;
+        }
+      }
     }
 
     img {
-      margin-top: 2.805em;
-      margin-bottom: 2.805em;
+      margin: 2.805em auto;
       width: 271.24px;
       height: 340px;
       @include md {
@@ -75,71 +104,6 @@
       @include lg {
         width: 539.28px;
         height: 676px;
-      }
-    }
-
-    .information {
-      @include lg {
-        margin-top: 2.805em;
-        margin-bottom: 2.805em;
-      }
-    }
-
-    h2 {
-      line-height: 2;
-      // padding: 0.8em 0;
-      font-size: $fs-700;
-      text-align: center;
-
-      @include md {
-        font-size: 5.333em;
-      }
-
-      @include lg {
-        text-align: start;
-      }
-    }
-
-    p {
-      line-height: 1.2;
-      max-width: 540px;
-      text-align: center;
-      font-size: $fs-200;
-
-      @include md {
-        font-size: $fs-300;
-      }
-
-      @include lg {
-        text-align: start;
-        font-size: $fs-400;
-      }
-    }
-
-    .interesting-facts {
-      flex-direction: column;
-      gap: 1em;
-      padding-bottom: 1.333em;
-      @include md {
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      @include lg {
-        justify-content: flex-start;
-        gap: 5em;
-      }
-
-      p {
-        line-height: 2;
-        font-size: $fs-500;
-      }
-    }
-
-    h3 {
-      text-align: center;
-      @include lg {
-        justify-content: center;
-        text-align: start;
       }
     }
   }

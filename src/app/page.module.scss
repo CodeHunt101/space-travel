@@ -39,7 +39,6 @@
     text-align: center;
     justify-content: space-between;
     padding-bottom: 30%;
-    padding-top: 5em;
     position: relative;
     z-index: 1;
     height: 100%;
@@ -48,6 +47,7 @@
       justify-content: space-evenly;
       margin-inline: 5em;
       padding-bottom: 5%;
+      padding-top: 5em;
     }
 
     @include lg {

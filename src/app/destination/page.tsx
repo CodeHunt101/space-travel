@@ -1,41 +1,40 @@
 'use client'
-import React, { useState, useEffect, Suspense } from 'react'
+import React, { useState, Suspense, useCallback } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
 import destinationData from '../data.json'
+import { DestinationData } from '../utils/types'
 const Tabs = React.lazy(() => import('../components/Tabs'))
 
-interface Destination {
-  name: string
-  images: {
-    png: string
-    webp: string
-  }
-  description: string
-  distance: string
-  travel: string
-}
-
-const Destination: React.FC = () => {
-  const [destinations] = useState<Destination[]>(destinationData.destinations)
-  const [currentDestination, setCurrentDestination] = useState<Destination>(
+const Destination = () => {
+  const [destinations] = useState<DestinationData[]>(
+    destinationData.destinations || []
+  )
+  const [currentDestination, setCurrentDestination] = useState<DestinationData>(
     destinations[0]
   )
 
-  const handleTabChange = (tabName: string) => {
-    const newDestination = destinations.find((dest) => dest.name === tabName)
-    if (newDestination) {
-      setCurrentDestination(newDestination)
-    }
+  const handleTabChange = useCallback(
+    (tabName: string) => {
+      const newDestination = destinations.find((dest) => dest.name === tabName)
+      if (newDestination) {
+        setCurrentDestination(newDestination)
+      }
+    },
+    [destinations]
+  )
+
+  if (destinations.length === 0) {
+    return <div>No destinations available</div>
   }
 
   return (
-    <main className={`${styles.destination} text-accent ff-serif text-accent`}>
+    <main className={`${styles.destination} text-accent ff-serif`}>
       <section className={`container ${styles['content-wrapper']}`}>
         <h1 className="numbered-title text-white">
           <span>01</span>Pick your destination
         </h1>
-        <div id={styles['destination-data']} className="flex">
+        <div className={`${styles['destination-data']} flex`}>
           <Image
             src={currentDestination.images.webp}
             alt={currentDestination.name}
@@ -52,11 +51,11 @@ const Destination: React.FC = () => {
             <h2 className="uppercase fs-900 ff-serif letter-spacing-2 text-white">
               {currentDestination.name}
             </h2>
-            <p className="ff-sans-normal text-accent fs-300">
+            <p className="ff-sans-normal fs-300">
               {currentDestination.description}
             </p>
             <hr />
-            <div id={styles['interesting-facts']} className="flex">
+            <div className={`${styles['interesting-facts']} flex`}>
               <div>
                 <h3 className="uppercase ff-sans-cond fs-200 letter-spacing-2">
                   Avg. Distance
@@ -69,7 +68,9 @@ const Destination: React.FC = () => {
                 <h3 className="uppercase ff-sans-cond fs-200 letter-spacing-2">
                   Est. Travel Time
                 </h3>
-                <p className="uppercase text-white">{currentDestination.travel}</p>
+                <p className="uppercase text-white">
+                  {currentDestination.travel}
+                </p>
               </div>
             </div>
           </div>

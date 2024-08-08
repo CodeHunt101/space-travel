@@ -12,3 +12,14 @@ export enum BreakPoints {
   LG = 992,
   XL = 1200
 }
+
+export type DestinationData = {
+  name: string
+  images: {
+    png: string
+    webp: string
+  }
+  description: string
+  distance: string
+  travel: string
+}

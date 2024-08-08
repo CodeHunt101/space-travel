@@ -5,6 +5,8 @@ import styles from './layout.module.scss'
 import { barlow, barlowCondensed, bellefair } from './utils/fonts'
 import Image from 'next/image'
 import logo from '../../public/assets/shared/logo.svg'
+import Link from 'next/link'
+import { Path } from './utils/types'
 
 const NavBar = React.lazy(() => import('./components/NavBar'))
 
@@ -29,7 +31,9 @@ export default function RootLayout({
         <header id={styles['main-header']} className="sticky">
           <section className={`${styles.menu} flex`}>
             <div className={`${styles.logo} flex`}>
-              <Image src={logo} alt="Space travel website logo" />
+              <Link href={Path.HOME}>
+                <Image src={logo} alt="Space travel website logo" />
+              </Link>
             </div>
             <Suspense fallback={<div>Loading navigation...</div>}>
               <NavBar />

@@ -23,3 +23,13 @@ export type DestinationData = {
   distance: string
   travel: string
 }
+
+export type CrewData = {
+  name: string
+  images: {
+    png: string
+    webp: string
+  }
+  role: string
+  bio: string
+}

@@ -81,7 +81,7 @@ const NavBar = () => {
         >
           {renderNavItem(Path.HOME, 'Home', '00')}
           {renderNavItem(Path.DESTINATION, 'Destination', '01')}
-          {renderNavItem(Path.NOT_READY, 'Crew', '02')}
+          {renderNavItem(Path.CREW, 'Crew', '02')}
           {renderNavItem(Path.NOT_READY, 'Technology', '03')}
         </ul>
       </nav>

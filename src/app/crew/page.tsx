@@ -30,27 +30,29 @@ const Crew = () => {
         <h1 className="numbered-title text-white">
           <span>02</span>Meet your crew
         </h1>
-        <div className={`${styles['crew-data']} flex`}>
-          <h2 className="uppercase letter-spacing-4 text-white">
-            {currentCrewMember.role}
-            <span className="uppercase ff-serif text-white">
-              {currentCrewMember.name}
-            </span>
-          </h2>
-          <p className="ff-sans-normal fs-300">{currentCrewMember.bio}</p>
-          <Suspense fallback={<div>Loading navigation elements...</div>}>
-            <Dots
-              items={crew.map((crewMember) => crewMember.name)}
-              onDotChange={handleDotChange}
-            />
-          </Suspense>
+        <div className={`${styles['crew-data-wrapper']} flex`}>
+          <div className={`${styles['crew-data']} flex`}>
+            <h2 className="uppercase letter-spacing-4 text-white">
+              {currentCrewMember.role}
+              <span className="uppercase ff-serif text-white">
+                {currentCrewMember.name}
+              </span>
+            </h2>
+            <p className="ff-sans-normal fs-300">{currentCrewMember.bio}</p>
+            <Suspense fallback={<div>Loading navigation elements...</div>}>
+              <Dots
+                items={crew.map((crewMember) => crewMember.name)}
+                onDotChange={handleDotChange}
+              />
+            </Suspense>
+          </div>
+          <Image
+            src={currentCrewMember.images.webp}
+            alt={currentCrewMember.name}
+            width={539.28}
+            height={676}
+          />
         </div>
-        <Image
-          src={currentCrewMember.images.webp}
-          alt={currentCrewMember.name}
-          width={539.28}
-          height={676}
-        />
       </section>
     </main>
   )

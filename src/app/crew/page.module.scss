@@ -1,9 +1,9 @@
-@import "../styles/mixins";
-@import "../styles/variables";
+@import '../styles/mixins';
+@import '../styles/variables';
 
 .crew {
   min-height: 100vh;
-  background-image: url("../../../public/assets/crew/background.webp");
+  background-image: url('../../../public/assets/crew/background.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -32,6 +32,14 @@
 
       @include lg {
         font-size: $fs-500;
+        margin-bottom: 1.893em;
+      }
+    }
+
+    .crew-data-wrapper {
+      flex-direction: column;
+      @include lg {
+        flex-direction: row;
       }
     }
 
@@ -45,9 +53,8 @@
 
       @include lg {
         margin-top: 4em;
-        flex-direction: row;
         align-items: flex-start;
-        gap: 6em;
+        justify-content: flex-end;
       }
 
       h2 {
@@ -58,6 +65,7 @@
           font-size: 1.5rem;
         }
         @include lg {
+          text-align: start;
           font-size: $fs-600;
         }
         span {
@@ -84,11 +92,13 @@
 
         @include md {
           font-size: $fs-300;
+          min-height: 8em;
         }
 
         @include lg {
           text-align: start;
           font-size: $fs-400;
+          margin-bottom: 10.5em;
         }
       }
     }
@@ -102,6 +112,7 @@
         height: 560px;
       }
       @include lg {
+        margin: 0 auto;
         width: 539.28px;
         height: 676px;
       }

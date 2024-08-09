@@ -2,6 +2,10 @@
 @import "../styles/mixins";
 
 .dot-indicators {
+  @include lg {
+    gap: 2.222em;
+  }
+
   button {
     border-radius: 50%;
     width: 0.555em;

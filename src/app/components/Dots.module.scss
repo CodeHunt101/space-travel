@@ -19,12 +19,11 @@
     }
   }
 
-  button:hover,
-  button:focus {
+  button:hover {
     @include bg-colour($clr-white, 50%);
   }
 
-  .active,
+  button:focus, .active,
   [aria-selected="true"] {
     @include bg-colour($clr-white);
   }

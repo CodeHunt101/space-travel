@@ -30,8 +30,8 @@ const Destination = () => {
 
   return (
     <main className={`${styles.destination} text-accent ff-serif`}>
-      <section className={`container ${styles['content-wrapper']}`}>
-        <h1 className="numbered-title text-white">
+      <section aria-labelledby='destination-heading' className={`container ${styles['content-wrapper']}`}>
+        <h1 id="destination-heading" className="numbered-title text-white">
           <span>01</span>Pick your destination
         </h1>
         <div className={`${styles['destination-data']} flex`}>

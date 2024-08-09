@@ -26,8 +26,8 @@ const Crew = () => {
 
   return (
     <main className={`${styles.crew} text-accent ff-serif`}>
-      <section className={`container ${styles['content-wrapper']}`}>
-        <h1 className="numbered-title text-white">
+      <section aria-labelledby='crew-heading' className={`container ${styles['content-wrapper']}`}>
+        <h1 id="crew-heading" className="numbered-title text-white">
           <span>02</span>Meet your crew
         </h1>
         <div className={`${styles['crew-data-wrapper']} flex`}>

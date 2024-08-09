@@ -17,19 +17,27 @@ const Dots = ({
   }
 
   return (
-    <div className={`${styles['dot-indicators']} flex`}>
+    <nav
+      aria-label="Crew member navigation"
+      className={`${styles['dot-indicators']} flex`}
+    >
       {items.map((item, index) => (
-        <button key={item} aria-selected={selectedDot === index} onClick={() => handleClick(index)}>
+        <button
+          key={item}
+          role="tab"
+          aria-selected={selectedDot === index}
+          onClick={() => handleClick(index)}
+        >
           <span
             className={`${
               selectedDot === index ? styles['active'] : ''
             } sr-only`}
           >
-            Slide title
+            {`View information about ${item}`}
           </span>
         </button>
       ))}
-    </div>
+    </nav>
   )
 }
 

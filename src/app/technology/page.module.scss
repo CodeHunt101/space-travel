@@ -1,0 +1,143 @@
+@import "../styles/mixins";
+@import "../styles/variables";
+
+.destination {
+  min-height: 100vh;
+  background-image: url("../../../public/assets/technology/background.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .content-wrapper {
+    padding-top: 2.667em;
+    width: 90%;
+
+    @include md {
+      padding-top: 2.222em;
+    }
+
+    @include lg {
+      padding-top: 5em;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: $fs-300;
+
+      @include md {
+        font-size: 1.111em;
+        text-align: start;
+      }
+
+      @include lg {
+        font-size: $fs-500;
+      }
+    }
+
+    .destination-data {
+      flex-direction: column;
+      align-items: center;
+
+      @include md {
+        margin-top: 1em;
+      }
+
+      @include lg {
+        margin-top: 4em;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 6em;
+      }
+    }
+
+    img {
+      margin-top: 2.805em;
+      margin-bottom: 2.805em;
+      width: 150px;
+      height: 150px;
+      @include md {
+        width: 300px;
+        height: 300px;
+      }
+      @include lg {
+        width: 480px;
+        height: 480px;
+      }
+    }
+
+    .information {
+      @include lg {
+        margin-top: 2.805em;
+        margin-bottom: 2.805em;
+      }
+    }
+
+    h2 {
+      line-height: 2;
+      // padding: 0.8em 0;
+      font-size: $fs-700;
+      text-align: center;
+
+      @include md {
+        font-size: 5.333em;
+      }
+
+      @include lg {
+        text-align: start;
+      }
+    }
+
+    p {
+      line-height: 1.2;
+      max-width: 540px;
+      text-align: center;
+      font-size: $fs-200;
+
+      @include md {
+        font-size: $fs-300;
+      }
+
+      @include lg {
+        text-align: start;
+        font-size: $fs-400;
+      }
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #{"hsl(#{$clr-white} / 30%)"};
+      margin: 1.333em 0;
+
+      @include lg {
+        margin: 2.222em 0;
+      }
+    }
+
+    .interesting-facts {
+      flex-direction: column;
+      gap: 1em;
+      padding-bottom: 1.333em;
+      @include md {
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      @include lg {
+        justify-content: flex-start;
+        gap: 5em;
+      }
+
+      p {
+        line-height: 2;
+        font-size: $fs-500;
+      }
+    }
+
+    h3 {
+      text-align: center;
+      @include lg {
+        justify-content: center;
+        text-align: start;
+      }
+    }
+  }
+}

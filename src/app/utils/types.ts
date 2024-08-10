@@ -33,3 +33,12 @@ export type CrewData = {
   role: string
   bio: string
 }
+
+export type TechnologyData = {
+  name: string
+  images: {
+    portrait: string
+    landscape: string
+  }
+  description: string
+}

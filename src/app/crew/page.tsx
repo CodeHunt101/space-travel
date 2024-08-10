@@ -21,7 +21,7 @@ const Crew = () => {
   )
 
   if (crew.length === 0) {
-    return <div>No destinations available</div>
+    return <div>No crew available</div>
   }
 
   return (

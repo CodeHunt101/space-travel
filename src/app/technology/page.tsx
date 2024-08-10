@@ -26,7 +26,7 @@ const Technology = () => {
   )
 
   const isDesktop = useMediaQuery('(min-width: 992px)')
-  console.log(isDesktop)
+  console.log({isDesktop})
 
   if (technologies.length === 0) {
     return <div>No Technologies available</div>
@@ -36,7 +36,7 @@ const Technology = () => {
     <main className={`${styles.technology} text-accent ff-serif`}>
       <section
         aria-labelledby="technology-heading"
-        className={`${styles['content-wrapper']}`}
+        className={`${isDesktop ? 'container': ''} ${styles['content-wrapper']}`}
       >
         <h1 id="technology-heading" className="numbered-title text-white">
           <span>03</span>Space Launch 101

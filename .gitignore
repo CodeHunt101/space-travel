@@ -41,3 +41,7 @@ next-env.d.ts
 
 #lighthouse
 lighthouse-config.json
+
+#scripts
+script.js
+text.txt

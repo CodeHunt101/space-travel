@@ -1,7 +1,5 @@
-'use client'
-/* eslint-disable jsx-a11y/role-supports-aria-props */
-import { useState } from 'react'
 import styles from './Tabs.module.scss'
+import BaseNavigator from './BaseNavigator'
 
 const Tabs = ({
   items,
@@ -9,28 +7,24 @@ const Tabs = ({
 }: {
   items: string[]
   onTabChange: (tabName: string) => void
-}) => {
-  const [selectedTab, setSelectedTab] = useState<number>(0)
-
-  const handleClick = (index: number) => {
-    setSelectedTab(index)
-    onTabChange(items[index])
-  }
-
-  return (
-    <div className={`${styles['tab-list']} underline-indicators flex`}>
-      {items.map((item, index) => (
-        <button
-          key={item}
-          aria-selected={selectedTab === index}
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          onClick={() => handleClick(index)}
-        >
-          {item}
-        </button>
-      ))}
-    </div>
-  )
-}
+}) => (
+  <BaseNavigator
+    items={items}
+    onItemChange={onTabChange}
+    className={`${styles['tab-list']} underline-indicators flex`}
+    ariaLabel="Tab navigation"
+    renderButton={(item, index, isSelected, handleClick) => (
+      // eslint-disable-next-line jsx-a11y/role-supports-aria-props
+      <button
+        key={item}
+        aria-selected={isSelected}
+        className="uppercase ff-sans-cond text-accent letter-spacing-2"
+        onClick={handleClick}
+      >
+        {item}
+      </button>
+    )}
+  />
+)
 
 export default Tabs

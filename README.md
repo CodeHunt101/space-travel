@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Space Travel - Frontend Application
+
+Welcome to the **Space Travel** frontend application! This project is a sleek and interactive web application designed to let users explore various space travel destinations, learn about the crew members, and discover the latest technology used in space exploration.
+
+## Table of Contents
+
+- [Demo](#demo)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running the Application](#running-the-application)
+  - [Building the Application](#building-the-application)
+- [Project Structure](#project-structure)
+- [Testing](#testing)
+- [Technologies Used](#technologies-used)
+- [Contributing](#contributing)
+
+## Demo
+
+Check out the live version of the Space Travel application [here](https://spacetravel-fe.vercel.app/).
+
+## Features
+
+- **Interactive Navigation:** Explore different sections (Home, Destination, Crew, and Technology) using a responsive and accessible navigation menu.
+- **Dynamic Content:** Each section dynamically loads content, such as destinations with detailed descriptions and travel information.
+- **Accessible Components:** Designed with accessibility in mind, including ARIA attributes and semantic HTML.
+- **Responsive Design:** Optimized for various screen sizes and devices.
+- **Smooth Animations:** Page transitions and component interactions include subtle animations for a polished user experience.
 
 ## Getting Started
 
-First, run the development server:
+### Installation
+
+First, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/space-travel.git
+cd space-travel
+```
+
+Install the necessary dependencies:
+
+```bash
+npm install
+```
+
+### Running the Application
+
+To run the application locally, use:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This command will start a development server at `http://localhost:3000/`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Building the Application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To create an optimized production build, run:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+Here's a brief overview of the project's structure:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```plaintext
+space-travel/
+├── public/                # Public assets (images, icons, etc.)
+├── src/
+│   ├── app/               # Main application components and pages
+│   │   ├── components/    # Reusable UI components
+│   │   ├── styles/        # Global and modular SCSS styles
+│   │   ├── utils/         # Utility functions and type definitions
+│   │   ├── data.json      # Static data for destinations, crew, and technology
+│   │   └── ...            # Other application-specific files
+├── .eslintrc.json         # ESLint configuration
+├── .gitignore             # Files and directories to be ignored by git
+├── package.json           # Project metadata and npm scripts
+├── tsconfig.json          # TypeScript configuration
+└── README.md              # Project documentation
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Key Components
+
+- **NavBar:** A responsive navigation menu that adapts to screen sizes and offers an accessible user experience.
+- **Crew, Destination, Technology Pages:** Pages that fetch and display information about space destinations, crew members, and technologies.
+- **Reusable Components:** Dots, Numbers, Tabs, and LargeButton components enhance interactivity across the app.
+
+## Testing
+
+This project uses [Jest](https://jestjs.io/) and [Testing Library](https://testing-library.com/) to ensure reliability and correctness. 
+
+To run tests (includes coverage reports):
+
+```bash
+npm test
+```
+
+To clear the Jest cache:
+
+```bash
+npm run test:clearCache
+```
+
+## Technologies Used
+
+- **React**: Library for building user interfaces.
+- **Next.js**: Framework for server-rendered React applications.
+- **TypeScript**: Provides static typing to JavaScript, improving code quality.
+- **SCSS**: For modular and reusable styles.
+- **Jest**: Testing framework with a focus on simplicity.
+- **Testing Library**: For testing React components in a way that closely resembles how they are used.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
+
+1. Fork the repository.
+2. Create a new feature branch (`git checkout -b feature-branch-name`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add some feature'`).
+5. Push to the branch (`git push origin feature-branch-name`).
+6. Create a new Pull Request.
+

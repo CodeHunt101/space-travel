@@ -1,6 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import LargeButton from '@/app/components/LargeButton'
+import { Path } from '@/app/utils/types'
 
 describe('LargeButton Component', () => {
   test('renders an anchor element with the role of button', () => {
@@ -12,7 +13,7 @@ describe('LargeButton Component', () => {
   test('anchor element has correct href attribute', () => {
     render(<LargeButton />)
     const anchorElement = screen.getByRole('button')
-    expect(anchorElement).toHaveAttribute('href', '#')
+    expect(anchorElement).toHaveAttribute('href', Path.DESTINATION)
   })
 
   test('anchor element has correct aria-label attribute', () => {

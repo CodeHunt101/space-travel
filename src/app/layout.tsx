@@ -1,4 +1,5 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, useEffect } from 'react'
+import { useRouter } from 'next/router';
 import type { Metadata } from 'next'
 import './styles/globals.scss'
 import styles from './layout.module.scss'
@@ -7,6 +8,7 @@ import Image from 'next/image'
 import logo from '../../public/assets/shared/logo.svg'
 import Link from 'next/link'
 import { Path } from './utils/types'
+import { Content } from './Content';
 
 const NavBar = React.lazy(() => import('./components/NavBar'))
 
@@ -40,7 +42,11 @@ export default function RootLayout({
             </Suspense>
           </section>
         </header>
-        {children}
+        <Content>
+          {children}
+        </Content>
+
+
       </body>
     </html>
   )

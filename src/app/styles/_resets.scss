@@ -26,7 +26,7 @@ h4,
 h5,
 h6,
 p {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 // Set up the body
@@ -36,7 +36,20 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   @include text-colour($clr-white);
-  @include bg-colour($clr-dark)
+  @include bg-colour($clr-dark);
+
+  &.fade-in {
+    animation: fadeInAnimation ease-in 0.5s;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 // Make images easier to work with

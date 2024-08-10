@@ -132,4 +132,60 @@ describe('NavBar Component', () => {
     fireEvent.mouseDown(navWrapper)
     expect(navWrapper).toHaveClass('open')
   })
+
+  test('closes menu when a navigation link is clicked', () => {
+    render(<NavBar />)
+  
+    const button = screen.getByRole('button', { name: /open menu/i })
+    fireEvent.click(button)
+  
+    const homeLink = screen.getByText('Home')
+    fireEvent.click(homeLink)
+  
+    const navWrapper = screen.getByTestId('nav-wrapper')
+    expect(navWrapper).toHaveClass('closed')
+  })
+  
+  test('menu button shows open menu icon initially', () => {
+    render(<NavBar />)
+  
+    const button = screen.getByRole('button', { name: /open menu/i })
+    const icon = screen.getByAltText('Open menu icon')
+    expect(icon).toBeInTheDocument()
+  })
+  
+  test('menu button shows close menu icon when menu is opened', () => {
+    render(<NavBar />)
+  
+    const button = screen.getByRole('button', { name: /open menu/i })
+    fireEvent.click(button)
+  
+    const icon = screen.getByAltText('Close menu icon')
+    expect(icon).toBeInTheDocument()
+  })
+  
+  test('removes event listener on unmount', () => {
+    const removeEventListenerSpy = jest.spyOn(document, 'removeEventListener')
+    const { unmount } = render(<NavBar />)
+  
+    unmount()
+  
+    expect(removeEventListenerSpy).toHaveBeenCalledWith('mousedown', expect.any(Function))
+  })
+  
+  test('menu does not reopen when clicking on a different navigation item', () => {
+    ;(usePathname as jest.Mock).mockReturnValue(Path.HOME)
+    render(<NavBar />)
+  
+    const button = screen.getByRole('button', { name: /open menu/i })
+    fireEvent.click(button)
+    fireEvent.click(button)
+  
+    const destinationLink = screen.getByText('Destination')
+    fireEvent.click(destinationLink)
+  
+    const navWrapper = screen.getByTestId('nav-wrapper')
+    expect(navWrapper).toHaveClass('closed')
+  })
+  
 })

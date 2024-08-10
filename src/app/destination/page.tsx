@@ -40,6 +40,7 @@ const Destination = () => {
             alt={currentDestination.name}
             width={445}
             height={445}
+            priority={true}
           />
           <div className={styles.information}>
             <Suspense fallback={<div>Loading tabs...</div>}>

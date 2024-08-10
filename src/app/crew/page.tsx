@@ -51,6 +51,7 @@ const Crew = () => {
             alt={currentCrewMember.name}
             width={539.28}
             height={676}
+            priority={true}
           />
         </div>
       </section>

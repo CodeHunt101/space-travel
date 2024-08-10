@@ -49,8 +49,9 @@ const Technology = () => {
               ]
             }
             alt={currentTechnology.name}
-            width={445}
-            height={445}
+            priority={true}
+            width={608}
+            height={600}
           />
           <div className={`${styles.information} flex container`}>
             <Suspense fallback={<div>Loading navigation numbers...</div>}>

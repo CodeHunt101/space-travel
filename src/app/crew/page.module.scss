@@ -1,9 +1,9 @@
-@import '../styles/mixins';
-@import '../styles/variables';
+@import "../styles/mixins";
+@import "../styles/variables";
 
 .crew {
   min-height: 100vh;
-  background-image: url('../../../public/assets/crew/background.webp');
+  background-image: url("../../../public/assets/crew/background.webp");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -114,8 +114,6 @@
       }
       @include lg {
         margin: 0 auto;
-        width: 539.28px;
-        height: 676px;
       }
     }
   }

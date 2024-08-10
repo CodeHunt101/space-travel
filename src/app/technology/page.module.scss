@@ -10,15 +10,15 @@
 
   .content-wrapper {
     padding-top: 2.667em;
-    width: 90%;
 
     @include md {
+      width: 90%;
       padding-top: 2.222em;
     }
 
     @include lg {
       padding-top: 5em;
-      width: 100%
+      width: 100%;
     }
 
     h1 {
@@ -32,7 +32,7 @@
       }
 
       @include lg {
-        margin-left: 0;
+        margin-left: 8%;
         font-size: $fs-500;
       }
     }
@@ -50,21 +50,37 @@
         position: relative;
         margin-top: 4em;
         flex-direction: row-reverse;
-        gap: 6em;
+        justify-content: center;
       }
     }
 
-    img {
+    .image-container {
       margin-top: 4.889em;
       margin-bottom: 1.778em;
-      width: 100vw;
-      height: 258px;
-      @include md {
-        height: 356px;
-      }
+
       @include lg {
-        width: 608px;
-        height: 600px;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .landscape-image {
+        width: 100vw;
+        height: 258px;
+        @include md {
+          height: 357px;
+        }
+        @include lg {
+          display: none;
+        }
+      }
+
+      .portrait-image {
+        display: none;
+        @include lg {
+          display: inline;
+          width: 608px;
+          height: 600px;
+        }
       }
     }
 
@@ -74,8 +90,15 @@
       gap: 2.222em;
 
       @include lg {
+        gap: 3.556em;
         flex-direction: row;
-        align-items: flex-start;
+        margin-left: 1.5em;
+      }
+
+      .content {
+        @include lg {
+          // min-width: 470px;
+        }
       }
     }
 

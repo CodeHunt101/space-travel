@@ -25,9 +25,6 @@ const Technology = () => {
     [technologies]
   )
 
-  const isDesktop = useMediaQuery('(min-width: 992px)')
-  console.log({isDesktop})
-
   if (technologies.length === 0) {
     return <div>No Technologies available</div>
   }
@@ -42,17 +39,24 @@ const Technology = () => {
           <span>03</span>Space Launch 101
         </h1>
         <div className={`${styles['technology-data']} flex`}>
-          <Image
-            src={
-              currentTechnology.images[
-                `${isDesktop ? 'portrait' : 'landscape'}`
-              ]
-            }
-            alt={currentTechnology.name}
-            priority={true}
-            width={608}
-            height={600}
-          />
+          <div className={styles['image-container']}>
+            <Image
+              className={styles['landscape-image']}
+              src={currentTechnology.images.landscape}
+              alt={currentTechnology.name}
+              priority={true}
+              width={768}
+              height={357}
+            />
+            <Image
+              className={styles['portrait-image']}
+              src={currentTechnology.images.portrait}
+              alt={currentTechnology.name}
+              priority={true}
+              width={608}
+              height={600}
+            />
+          </div>
           <div className={`${styles.information} flex`}>
             <Suspense fallback={<div>Loading navigation numbers...</div>}>
               <Numbers
@@ -60,7 +64,7 @@ const Technology = () => {
                 onNumberChange={handleNumberChange}
               />
             </Suspense>
-            <div>
+            <div className={styles.content}>
               <h2 className="uppercase letter-spacing-4 text-white">
                 The Terminology...
               </h2>

@@ -1,7 +1,7 @@
 @import "../styles/mixins";
 @import "../styles/variables";
 
-.destination {
+.technology {
   min-height: 100vh;
   background-image: url("../../../public/assets/technology/background.webp");
   background-size: cover;
@@ -34,15 +34,17 @@
       }
     }
 
-    .destination-data {
+    .technology-data {
       flex-direction: column;
       align-items: center;
+      position: absolute;
 
       @include md {
         margin-top: 1em;
       }
 
       @include lg {
+        position: relative;
         margin-top: 4em;
         flex-direction: row;
         align-items: flex-start;
@@ -51,44 +53,66 @@
     }
 
     img {
-      margin-top: 2.805em;
-      margin-bottom: 2.805em;
-      width: 150px;
-      height: 150px;
+      margin-top: 4.889em;
+      margin-bottom: 1.778em;
+      width: 100vw;
+      height: 258px;
       @include md {
-        width: 300px;
-        height: 300px;
+        height: 356px;
       }
       @include lg {
-        width: 480px;
-        height: 480px;
+        width: 600px;
+        height: 600px;
       }
     }
 
     .information {
+      flex-direction: column;
+      align-items: center;
+      gap: 2.222em;
+
       @include lg {
-        margin-top: 2.805em;
-        margin-bottom: 2.805em;
+        flex-direction: row;
+        align-items: flex-start;
       }
     }
 
     h2 {
       line-height: 2;
-      // padding: 0.8em 0;
-      font-size: $fs-700;
+      font-size: $fs-400;
       text-align: center;
+      margin-bottom: 7px;
+      @include text-colour($clr-white, 50%);
 
       @include md {
-        font-size: 5.333em;
+        font-size: 1.5rem;
       }
 
       @include lg {
+        text-align: start;
+        font-size: $fs-600;
+      }
+    }
+
+    h3 {
+      display: block;
+      line-height: 1.5;
+      font-size: 1.5rem;
+      text-align: center;
+      margin-bottom: 1em;
+
+      @include md {
+        font-size: 2.5rem;
+      }
+
+      @include lg {
+        font-size: $fs-700;
         text-align: start;
       }
     }
 
     p {
-      line-height: 1.2;
+      line-height: 1.5;
       max-width: 540px;
       text-align: center;
       font-size: $fs-200;
@@ -100,43 +124,6 @@
       @include lg {
         text-align: start;
         font-size: $fs-400;
-      }
-    }
-
-    hr {
-      border: 0;
-      border-bottom: 1px solid #{"hsl(#{$clr-white} / 30%)"};
-      margin: 1.333em 0;
-
-      @include lg {
-        margin: 2.222em 0;
-      }
-    }
-
-    .interesting-facts {
-      flex-direction: column;
-      gap: 1em;
-      padding-bottom: 1.333em;
-      @include md {
-        flex-direction: row;
-        justify-content: space-around;
-      }
-      @include lg {
-        justify-content: flex-start;
-        gap: 5em;
-      }
-
-      p {
-        line-height: 2;
-        font-size: $fs-500;
-      }
-    }
-
-    h3 {
-      text-align: center;
-      @include lg {
-        justify-content: center;
-        text-align: start;
       }
     }
   }

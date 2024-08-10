@@ -1,0 +1,39 @@
+@import "../styles/variables";
+@import "../styles/mixins";
+
+.number-indicators {
+  align-items: center;
+
+  @include lg {
+    flex-direction: column;
+  }
+  button {
+    border-radius: 50%;
+    width: 2.222em;
+    aspect-ratio: 1;
+    border: 1px solid #{"hsl(#{$clr-white} / 30%)"};
+    @include bg-colour($clr-dark);
+    cursor: pointer;
+    font-size: $fs-400;
+
+    @include md {
+      width: 2.333em;
+      font-size: 1.5rem;
+    }
+
+    @include lg {
+      width: 2.5em;
+      font-size: $fs-600;
+    }
+
+    &.active,
+    &[aria-selected="true"] {
+      @include bg-colour($clr-white);
+      @include text-colour($clr-dark);
+    }
+
+    &:hover {
+      border: 1px solid #{"hsl(#{$clr-white})"};
+    }
+  }
+}

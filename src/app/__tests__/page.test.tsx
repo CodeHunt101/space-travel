@@ -40,7 +40,7 @@ describe('Home Component', () => {
       name: /so, you want to travel to/i,
     })
     expect(headingElement).toHaveClass(
-      'uppercase fs-400 ff-sans-cond letter-spacing-2'
+      'uppercase fs-400 ff-sans-cond letter-spacing-1'
     )
   })
 

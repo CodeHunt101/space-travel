@@ -12,9 +12,10 @@ export const Content = ({
 
   useEffect(() => {
     // Trigger the animation on route change
-    document.body.classList.remove('fade-in')
+    const mainElement = document.querySelector('main')
+    mainElement?.classList.remove('fade-in')
     void document.body.offsetWidth // Trigger reflow to restart the animation
-    document.body.classList.add('fade-in')
+    mainElement?.classList.add('fade-in')
   }, [pathname])
 
   return <>{children}</>

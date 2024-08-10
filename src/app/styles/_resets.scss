@@ -36,7 +36,9 @@ body {
   line-height: 1.5;
   @include text-colour($clr-white);
   @include bg-colour($clr-dark);
+}
 
+main {
   &.fade-in {
     animation: fadeInAnimation ease-in 0.5s;
   }

@@ -12,7 +12,6 @@
     padding-top: 2.667em;
 
     @include md {
-      width: 90%;
       padding-top: 2.222em;
     }
 
@@ -40,7 +39,6 @@
     .technology-data {
       flex-direction: column;
       align-items: center;
-      position: absolute;
 
       @include md {
         margin-top: 1em;
@@ -80,6 +78,7 @@
           display: inline;
           width: 608px;
           height: 600px;
+          border-radius: 40px;
         }
       }
     }
@@ -93,12 +92,6 @@
         gap: 3.556em;
         flex-direction: row;
         margin-left: 1.5em;
-      }
-
-      .content {
-        @include lg {
-          // min-width: 470px;
-        }
       }
     }
 

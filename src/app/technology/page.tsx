@@ -4,6 +4,7 @@ import Image from 'next/image'
 import styles from './page.module.scss'
 import technologyData from '../data.json'
 import { TechnologyData } from '../utils/types'
+import { useMediaQuery } from '../hooks/useMediaQuery'
 const Numbers = React.lazy(() => import('../components/Numbers'))
 
 const Technology = () => {
@@ -24,6 +25,9 @@ const Technology = () => {
     [technologies]
   )
 
+  const isDesktop = useMediaQuery('(min-width: 992px)')
+  console.log(isDesktop)
+
   if (technologies.length === 0) {
     return <div>No Technologies available</div>
   }
@@ -39,7 +43,11 @@ const Technology = () => {
         </h1>
         <div className={`${styles['technology-data']} flex`}>
           <Image
-            src={currentTechnology.images.landscape}
+            src={
+              currentTechnology.images[
+                `${isDesktop ? 'portrait' : 'landscape'}`
+              ]
+            }
             alt={currentTechnology.name}
             width={445}
             height={445}

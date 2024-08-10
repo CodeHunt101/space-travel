@@ -36,7 +36,7 @@ const Technology = () => {
     <main className={`${styles.technology} text-accent ff-serif`}>
       <section
         aria-labelledby="technology-heading"
-        className={`${isDesktop ? 'container': ''} ${styles['content-wrapper']}`}
+        className={`${styles['content-wrapper']}`}
       >
         <h1 id="technology-heading" className="numbered-title text-white">
           <span>03</span>Space Launch 101
@@ -53,7 +53,7 @@ const Technology = () => {
             width={608}
             height={600}
           />
-          <div className={`${styles.information} flex container`}>
+          <div className={`${styles.information} flex`}>
             <Suspense fallback={<div>Loading navigation numbers...</div>}>
               <Numbers
                 items={technologies.map((tech) => tech.name)}

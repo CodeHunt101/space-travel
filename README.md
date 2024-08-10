@@ -2,6 +2,8 @@
 
 Welcome to the **Space Travel** frontend application! This project is a sleek and interactive web application designed to let users explore various space travel destinations, learn about the crew members, and discover the latest technology used in space exploration.
 
+It features responsive design, smooth animations, and accessibility enhancements, making it a polished and user-friendly application. The project is well-structured with modular components, comprehensive testing, and clear documentation, making it easy to extend and maintain.
+
 ## Table of Contents
 
 - [Demo](#demo)

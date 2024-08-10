@@ -34,7 +34,6 @@ body {
   font-family: var(--ff-sans-normal);
   font-size: $fs-400;
   line-height: 1.5;
-  min-height: 100vh;
   @include text-colour($clr-white);
   @include bg-colour($clr-dark);
 

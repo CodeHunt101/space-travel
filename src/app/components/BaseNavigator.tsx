@@ -23,6 +23,7 @@ const BaseNavigator = ({
   const [selectedIndex, setSelectedIndex] = useState<number>(0)
 
   const handleClick = (index: number) => {
+    if (selectedIndex === index) return
     setSelectedIndex(index)
     onItemChange(items[index])
   }

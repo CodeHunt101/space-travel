@@ -13,21 +13,21 @@ describe('Tabs Component', () => {
   test('renders the correct number of tabs', () => {
     render(<Tabs items={items} onTabChange={mockOnTabChange} />)
 
-    const tabs = screen.getAllByRole('button')
+    const tabs = screen.getAllByRole('tab')
     expect(tabs).toHaveLength(items.length)
   })
 
   test('first tab is selected initially', () => {
     render(<Tabs items={items} onTabChange={mockOnTabChange} />)
 
-    const firstTab = screen.getAllByRole('button')[0]
+    const firstTab = screen.getAllByRole('tab')[0]
     expect(firstTab).toHaveAttribute('aria-selected', 'true')
   })
 
   test('clicking a tab triggers onTabChange with correct item', () => {
     render(<Tabs items={items} onTabChange={mockOnTabChange} />)
 
-    const secondTab = screen.getAllByRole('button')[1]
+    const secondTab = screen.getAllByRole('tab')[1]
     fireEvent.click(secondTab)
 
     expect(mockOnTabChange).toHaveBeenCalledWith(items[1])
@@ -36,7 +36,7 @@ describe('Tabs Component', () => {
   test('clicking a tab changes its selected state', () => {
     render(<Tabs items={items} onTabChange={mockOnTabChange} />)
 
-    const secondTab = screen.getAllByRole('button')[1]
+    const secondTab = screen.getAllByRole('tab')[1]
     fireEvent.click(secondTab)
 
     expect(secondTab).toHaveAttribute('aria-selected', 'true')
@@ -45,7 +45,7 @@ describe('Tabs Component', () => {
   test('only one tab is selected at a time', () => {
     render(<Tabs items={items} onTabChange={mockOnTabChange} />)
 
-    const tabs = screen.getAllByRole('button')
+    const tabs = screen.getAllByRole('tab')
 
     fireEvent.click(tabs[1])
     expect(tabs[1]).toHaveAttribute('aria-selected', 'true')

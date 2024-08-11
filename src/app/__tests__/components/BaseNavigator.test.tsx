@@ -45,7 +45,7 @@ describe('BaseNavigator', () => {
   test('renders correctly with given props', () => {
     renderComponent()
 
-    const nav = screen.getByRole('navigation')
+    const nav = screen.getByRole('tablist')
     expect(nav).toHaveClass(mockClassName)
     expect(nav).toHaveAttribute('aria-label', mockAriaLabel)
 
@@ -114,7 +114,7 @@ describe('BaseNavigator', () => {
   test('handles empty items array', () => {
     renderComponent({ items: [] })
 
-    const nav = screen.getByRole('navigation')
+    const nav = screen.getByRole('tablist')
     expect(nav).toBeEmptyDOMElement()
   })
 

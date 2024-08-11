@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
+import { DataProvider } from './context/DataContext'
 
 export const Content = ({
   children,
@@ -18,5 +19,8 @@ export const Content = ({
     mainElement?.classList.add('fade-in')
   }, [pathname])
 
-  return <>{children}</>
+  return (
+  <DataProvider>
+    {children}
+  </DataProvider>)
 }

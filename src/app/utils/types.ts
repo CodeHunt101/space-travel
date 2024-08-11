@@ -13,6 +13,12 @@ export enum BreakPoints {
   XL = 1200
 }
 
+export type SpaceTravelData = {
+  destinations?: DestinationData[]
+  crew?: CrewData[]
+  technologies?: TechnologyData[]
+}
+
 export type DestinationData = {
   name: string
   images: {

@@ -1,16 +1,13 @@
 'use client'
-import React, { useState, Suspense, useCallback } from 'react'
+import React, { useState, Suspense, useCallback, useContext } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import technologyData from '../data.json'
-import { TechnologyData } from '../utils/types'
-import { useMediaQuery } from '../hooks/useMediaQuery'
+import { SpaceTravelData, TechnologyData } from '../utils/types'
+import { DataContext } from '../context/DataContext'
 const Numbers = React.lazy(() => import('../components/Numbers'))
 
 const Technology = () => {
-  const [technologies] = useState<TechnologyData[]>(
-    technologyData.technology || []
-  )
+  const { technologies = [] } = useContext<SpaceTravelData>(DataContext)
   const [currentTechnology, setCurrentTechnology] = useState<TechnologyData>(
     technologies[0]
   )

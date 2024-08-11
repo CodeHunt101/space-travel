@@ -1,15 +1,13 @@
 'use client'
-import React, { useState, Suspense, useCallback } from 'react'
+import React, { useState, Suspense, useCallback, useContext } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import destinationData from '../data.json'
-import { DestinationData } from '../utils/types'
+import { DestinationData, SpaceTravelData } from '../utils/types'
+import { DataContext } from '../context/DataContext'
 const Tabs = React.lazy(() => import('../components/Tabs'))
 
 const Destination = () => {
-  const [destinations] = useState<DestinationData[]>(
-    destinationData.destinations || []
-  )
+  const { destinations = [] } = useContext<SpaceTravelData>(DataContext)
   const [currentDestination, setCurrentDestination] = useState<DestinationData>(
     destinations[0]
   )
@@ -30,7 +28,10 @@ const Destination = () => {
 
   return (
     <main className={`${styles.destination} text-accent ff-serif`}>
-      <section aria-labelledby='destination-heading' className={`container ${styles['content-wrapper']}`}>
+      <section
+        aria-labelledby="destination-heading"
+        className={`container ${styles['content-wrapper']}`}
+      >
         <h1 id="destination-heading" className="numbered-title text-white">
           <span>01</span>Pick your destination
         </h1>

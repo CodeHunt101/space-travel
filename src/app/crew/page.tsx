@@ -1,13 +1,13 @@
 'use client'
-import React, { useState, Suspense, useCallback } from 'react'
+import React, { useState, Suspense, useCallback, useContext } from 'react'
 import Image from 'next/image'
 import styles from './page.module.scss'
-import crewData from '../data.json'
-import { CrewData } from '../utils/types'
+import { CrewData, SpaceTravelData } from '../utils/types'
+import { DataContext } from '../context/DataContext'
 const Dots = React.lazy(() => import('../components/Dots'))
 
 const Crew = () => {
-  const [crew] = useState<CrewData[]>(crewData.crew || [])
+  const { crew = [] } = useContext<SpaceTravelData>(DataContext)
   const [currentCrewMember, setCurrentCrewMember] = useState<CrewData>(crew[0])
 
   const handleDotChange = useCallback(
@@ -26,7 +26,10 @@ const Crew = () => {
 
   return (
     <main className={`${styles.crew} text-accent ff-serif`}>
-      <section aria-labelledby='crew-heading' className={`container ${styles['content-wrapper']}`}>
+      <section
+        aria-labelledby="crew-heading"
+        className={`container ${styles['content-wrapper']}`}
+      >
         <h1 id="crew-heading" className="numbered-title text-white">
           <span>02</span>Meet your crew
         </h1>

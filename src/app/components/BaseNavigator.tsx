@@ -28,7 +28,7 @@ const BaseNavigator = ({
   }
 
   return (
-    <nav aria-label={ariaLabel} className={className}>
+    <nav aria-label={ariaLabel} className={className} role="tablist">
       {items.map((item, index) =>
         renderButton(item, index, selectedIndex === index, () =>
           handleClick(index)

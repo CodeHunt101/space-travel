@@ -14,9 +14,9 @@ const Numbers = ({
     className={`${styles['number-indicators']} flex`}
     ariaLabel="Number navigation"
     renderButton={(item, index, isSelected, handleClick) => (
-      // eslint-disable-next-line jsx-a11y/role-supports-aria-props
       <button
         key={item}
+        role="tab"
         aria-selected={isSelected}
         className={`${isSelected ? styles.active : ''} text-white ff-serif`}
         onClick={handleClick}

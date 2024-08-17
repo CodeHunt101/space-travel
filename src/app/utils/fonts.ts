@@ -5,14 +5,16 @@ const barlowCondensedInit = Barlow_Condensed({
   subsets: ['latin'],
   variable: '--ff-sans-cond',
   fallback: ['sans-serif'],
-  preload: true
+  preload: true,
+  adjustFontFallback: false,
 })
 const bellefairInit = Bellefair({
   weight: '400',
   subsets: ['latin'],
   variable: '--ff-serif',
   fallback: ['serif'],
-  preload: true
+  preload: true,
+  adjustFontFallback: false,
 })
 const barlowInit = Barlow({
   weight: ['400', '700'],
@@ -20,7 +22,8 @@ const barlowInit = Barlow({
   subsets: ['latin'],
   variable: '--ff-sans-normal',
   fallback: ['sans-serif'],
-  preload: true
+  preload: true,
+  adjustFontFallback: false,
 })
 
 export const barlowCondensed = barlowCondensedInit.variable

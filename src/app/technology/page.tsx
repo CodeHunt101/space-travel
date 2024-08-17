@@ -27,7 +27,10 @@ const Technology = () => {
   }
 
   return (
-    <main className={`${styles.technology} text-accent ff-serif`}>
+    <main
+      id="main-content"
+      className={`${styles.technology} text-accent ff-serif`}
+    >
       <section
         aria-labelledby="technology-heading"
         className={`${styles['content-wrapper']}`}

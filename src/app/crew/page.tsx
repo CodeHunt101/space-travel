@@ -25,7 +25,7 @@ const Crew = () => {
   }
 
   return (
-    <main className={`${styles.crew} text-accent ff-serif`}>
+    <main id="main-content" className={`${styles.crew} text-accent ff-serif`}>
       <section
         aria-labelledby="crew-heading"
         className={`container ${styles['content-wrapper']}`}

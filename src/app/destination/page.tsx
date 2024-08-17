@@ -27,7 +27,10 @@ const Destination = () => {
   }
 
   return (
-    <main className={`${styles.destination} text-accent ff-serif`}>
+    <main
+      id="main-content"
+      className={`${styles.destination} text-accent ff-serif`}
+    >
       <section
         aria-labelledby="destination-heading"
         className={`container ${styles['content-wrapper']}`}

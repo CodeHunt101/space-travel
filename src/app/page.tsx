@@ -3,7 +3,10 @@ import styles from './page.module.scss'
 
 export default function Home() {
   return (
-    <main className={`${styles.home} text-accent ff-serif text-accent`}>
+    <main
+      id="main-content"
+      className={`${styles.home} text-accent ff-serif text-accent`}
+    >
       <section
         className={`${styles.hero} container flex`}
         aria-labelledby="hero-heading"
@@ -13,7 +16,8 @@ export default function Home() {
             id="hero-heading"
             className="uppercase fs-400 ff-sans-cond letter-spacing-1"
           >
-            So, you want to travel to<span className="uppercase ff-serif text-white">Space</span>
+            So, you want to travel to
+            <span className="uppercase ff-serif text-white">Space</span>
           </h1>
           <p className="ff-sans-normal text-accent fs-300">
             Let’s face it; if you want to go to space, you might as well

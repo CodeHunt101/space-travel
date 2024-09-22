@@ -40,7 +40,8 @@ body {
 
 main {
   &.fade-in {
-    animation: fadeInAnimation ease-in 0.5s;
+    opacity: 0;
+    animation: fadeInAnimation ease-in 0.5s forwards;
   }
 }
 

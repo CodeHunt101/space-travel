@@ -1,5 +1,4 @@
-import React, { Suspense, useEffect } from 'react'
-import { useRouter } from 'next/router'
+import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import './styles/globals.scss'
 import styles from './layout.module.scss'

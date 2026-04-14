@@ -43,7 +43,7 @@ cd space-travel
 Install the necessary dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 ### Running the Application
@@ -51,7 +51,7 @@ npm install
 To run the application locally, use:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 This command will start a development server at `http://localhost:3000/`.
@@ -61,13 +61,13 @@ This command will start a development server at `http://localhost:3000/`.
 To create an optimized production build, run:
 
 ```bash
-npm run build
+pnpm build
 ```
 
 To start the production server:
 
 ```bash
-npm start
+pnpm start
 ```
 
 ## Project Structure
@@ -79,14 +79,16 @@ space-travel/
 ├── public/                # Public assets (images, icons, etc.)
 ├── src/
 │   ├── app/               # Main application components and pages
-│   │   ├── components/    # Reusable UI components and SCSS modules
+│   │   ├── components/    # Shared UI components and SCSS modules
+│   │   ├── context/       # App data context
+│   │   ├── design-system/ # Design system preview pages
 │   │   ├── styles/        # Global SCSS styles
 │   │   ├── utils/         # Utility functions and type definitions
 │   │   ├── data.json      # Static data for destinations, crew, and technology
-│   │   └── ...            # Other application-specific files such as pages
-├── .eslintrc.json         # ESLint configuration
-├── .gitignore             # Files and directories to be ignored by git
-├── package.json           # Project metadata and npm scripts
+│   │   └── ...            # Route files and page modules
+├── next.config.mjs        # Next.js config
+├── package.json           # Project metadata and pnpm scripts
+├── pnpm-lock.yaml         # Dependency lockfile
 ├── tsconfig.json          # TypeScript configuration
 └── README.md              # Project documentation
 ```
@@ -104,13 +106,13 @@ This project uses [Jest](https://jestjs.io/) and [Testing Library](https://testi
 To run tests (includes coverage reports):
 
 ```bash
-npm test
+pnpm test
 ```
 
 To clear the Jest cache:
 
 ```bash
-npm run test:clearCache
+pnpm test:clearCache
 ```
 
 ## Technologies Used
@@ -134,4 +136,3 @@ Contributions are welcome! If you'd like to contribute, please fork the reposito
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push to the branch (`git push origin feature-branch-name`).
 6. Create a new Pull Request.
-
